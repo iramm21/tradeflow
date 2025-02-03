@@ -108,6 +108,7 @@ const Navbar: React.FC = () => {
             </Link>
             {isLoggedIn ? (
               <>
+                <span className="block hover:text-gray-300"></span>
                 <span className="block hover:text-gray-300">
                   Welcome, {session?.user?.name || session?.user?.email}
                 </span>

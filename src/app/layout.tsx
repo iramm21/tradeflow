@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
-import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import "@/styles/tailwind.css"; // your global styles (if any)
+import ClientProviders from "@/providers/ClientProviders";
 
 export const metadata = {
   title: "TradeFlow - Trade Management App",
@@ -10,14 +9,12 @@ export const metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <Navbar />
-
-      {/* Main content */}
-      <main>{children}</main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    <html lang="en">
+      <body className="bg-gray-50 text-gray-900">
+        <ClientProviders>
+          <main>{children}</main>
+        </ClientProviders>
+      </body>
+    </html>
   );
 }
